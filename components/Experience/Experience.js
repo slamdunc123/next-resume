@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { AppContext } from '../../pages/index';
 import Carousel from '../Carousel';
-// import './styles.css';
+import styles from './Experience.module.css';
 
 const Experience = () => {
 	const { experience } = useContext(AppContext);
@@ -17,15 +17,20 @@ const Experience = () => {
 
 	const renderExp = (exp) => {
 		return exp.map((item) => (
-			<>
-				<div
-					className='d-flex flex-column flex-md-row justify-content-between mb-5'
-					key={item.id}
-				>
+			<div key={item.id}>
+				<div className='d-flex flex-column flex-md-row justify-content-between mb-5'>
 					<div className='flex-grow-1'>
 						<h3 className='mb-0'>{item.title}</h3>
-						<div className='subheading mb-3'>{item.company}</div>
-						<p>{item.duties}</p>
+						<div className='subheading mb-3'>
+							{item.company} - {item.industry}
+						</div>
+						<ul>
+							{item.duties.map((duty) => (
+								<li className='lead' key={duty.id}>
+									{duty.dutyDesc}
+								</li>
+							))}
+						</ul>
 					</div>
 					<div className='flex-shrink-0'>
 						<span className='text-primary'>{item.dates}</span>
@@ -33,26 +38,38 @@ const Experience = () => {
 				</div>
 				{item.projects
 					? item.projects.map((project, index) => (
-							<div className='row m-2' key={project.name}>
+							<div className='row m-2' key={project.id}>
 								{index % 2 === 0 ? (
 									<>
-										<div className='experience-carousel col-sm-12 col-md-6'>
+										<div
+											className={`${styles.experienceCarouselBackground} col-sm-12 col-md-6`}
+										>
 											<Carousel
-												sliderTitle={project.name}
+												sliderTitle={
+													project.projectTitle
+												}
 											/>
 										</div>
-										<div className='experience-text col-sm-12 col-md-6 bg-primary'>
-											{project.description}
+										<div
+											className={`${styles.experienceText} col-sm-12 col-md-6 bg-primary`}
+										>
+											{project.projectDesc}
 										</div>
 									</>
 								) : (
 									<>
-										<div className='experience-text col-sm-12 col-md-6 bg-secondary'>
-											{project.description}
+										<div
+											className={`${styles.experienceText} col-sm-12 col-md-6 bg-secondary`}
+										>
+											{project.projectDesc}
 										</div>
-										<div className='experience-carousel col-sm-12 col-md-6'>
+										<div
+											className={`${styles.experienceCarouselBackground} col-sm-12 col-md-6`}
+										>
 											<Carousel
-												sliderTitle={project.name}
+												sliderTitle={
+													project.projectTitle
+												}
 											/>
 										</div>
 									</>
@@ -60,7 +77,7 @@ const Experience = () => {
 							</div>
 					  ))
 					: null}
-			</>
+			</div>
 		));
 	};
 

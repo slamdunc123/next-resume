@@ -1,5 +1,7 @@
 import React from 'react';
-// import Slider from 'react-slick';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 // import './styles.css';
 
 const Carousel = ({ sliderTitle }) => {
@@ -14,17 +16,29 @@ const Carousel = ({ sliderTitle }) => {
 	return (
 		<div style={{ marginBottom: 50 }}>
 			<h5>{sliderTitle}</h5>
-			{/* <Slider {...settings}>
+			<Slider {...settings}>
 				<div className='slider-slide'>
 					<img
 						className='slick-slide-image'
-						src={`https://picsum.photos/400/200?img=1`}
+						src={`https://picsum.photos/500/250?img=1`}
 					/>
 					<label className='slick-slide-label'>label</label>
 				</div>
-				<div className='slider-slide'></div>
-				<div className='slider-slide'></div>
-			</Slider> */}
+				<div className='slider-slide'>
+					<img
+						className='slick-slide-image'
+						src={`https://picsum.photos/500/250?img=2`}
+					/>
+					<label className='slick-slide-label'>label</label>
+				</div>
+				<div className='slider-slide'>
+					<img
+						className='slick-slide-image'
+						src={`https://picsum.photos/500/250?img=3`}
+					/>
+					<label className='slick-slide-label'>label</label>
+				</div>
+			</Slider>
 		</div>
 	);
 };

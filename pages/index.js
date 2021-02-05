@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { profile, experience } from '../constants/data';
+import { profile, experience, education, skills } from '../constants/data';
 import Navbar from '../components/Navbar';
 import Profile from '../components/Profile';
 import Experience from '../components/Experience';
@@ -18,6 +18,8 @@ export default function Home() {
 			value={{
 				profile,
 				experience,
+				education,
+				skills,
 			}}
 		>
 			<div>
