@@ -1,65 +1,57 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { createContext } from 'react';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import { profile, experience } from '../constants/data';
+import Navbar from '../components/Navbar';
+import Profile from '../components/Profile';
+import Experience from '../components/Experience';
+import Education from '../components/Education';
+import Skills from '../components/Skills';
+import Interests from '../components/Interests';
+import Awards from '../components/Awards';
+
+export const AppContext = createContext();
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+	return (
+		<AppContext.Provider
+			value={{
+				profile,
+				experience,
+			}}
+		>
+			<div>
+				<Head>
+					<title>Resume</title>
+					<link rel='icon' href='/favicon.ico' />
+					{/* Google fonts */}
+					<link
+						href='https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700'
+						rel='stylesheet'
+						type='text/css'
+					/>
+					<link
+						href='https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i'
+						rel='stylesheet'
+						type='text/css'
+					/>
+				</Head>
+				<Navbar />
+				<main>
+					<Profile />
+					<hr className='m-0' />
+					<Experience />
+					<hr className='m-0' />
+					<Education />
+					<hr className='m-0' />
+					<Skills />
+					<hr className='m-0' />
+					<Interests />
+					<hr className='m-0' />
+					<Awards />
+					<hr className='m-0' />
+				</main>
+			</div>
+		</AppContext.Provider>
+	);
 }

@@ -1,0 +1,17 @@
+.row {
+	/* border: 1px dotted red; */
+}
+
+.experience-carousel {
+	/* border: 1px solid blue; */
+	/* background-color: #ec1616; */
+	background-image: url('https://picsum.photos/1200/400');
+	background-size: cover;
+	background-position: center;
+	min-height: 200px;
+}
+
+.experience-text {
+	background-color: silver;
+	color: #fff;
+}
