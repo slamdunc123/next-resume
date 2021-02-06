@@ -135,7 +135,6 @@ export const experience = [
 							'React and Angular courses: https://jbinternational.co.uk/courses',
 					},
 				],
-				// [],
 				projects: [
 					{
 						id: 1,
@@ -181,6 +180,26 @@ export const experience = [
 						id: 5,
 						dutyDesc:
 							'File transfer, deployment and domain management using: FileZilla, Coda, cPanel, Forge and DeployHQ.',
+					},
+				],
+				projects: [
+					{
+						id: 1,
+						projectTitle: 'Origin Housing',
+						projectDesc:
+							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere pariatur consequatur natus aliquam dolorum, enim nobis mollitia laboriosam nihil assumenda illum voluptatem nemo sunt eius animi repellat autem praesentium tempore.',
+					},
+					{
+						id: 2,
+						projectTitle: 'Icon 7',
+						projectDesc:
+							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi fugiat possimus fugit eum incidunt at, deserunt excepturi mollitia minima reprehenderit itaque sint, nemo dolor placeat quas et ex rem impedit.',
+					},
+					{
+						id: 3,
+						projectTitle: 'Bow River Village',
+						projectDesc:
+							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi fugiat possimus fugit eum incidunt at, deserunt excepturi mollitia minima reprehenderit itaque sint, nemo dolor placeat quas et ex rem impedit.',
 					},
 				],
 				dates: 'Jun 2018 - Feb 2019',

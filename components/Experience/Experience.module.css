@@ -2,7 +2,7 @@
 	/* border: 1px dotted red; */
 }
 
-.experienceCarouselBackground {
+.carouselBackground {
 	/* border: 1px solid blue; */
 	/* background-image: url('https://picsum.photos/1200/400'); */
 	background-size: cover;
@@ -10,7 +10,8 @@
 	min-height: 200px;
 }
 
-.experienceText {
-	background-color: silver;
-	color: #fff;
+.textContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

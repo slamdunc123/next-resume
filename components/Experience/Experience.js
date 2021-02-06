@@ -42,35 +42,29 @@ const Experience = () => {
 								{index % 2 === 0 ? (
 									<>
 										<div
-											className={`${styles.experienceCarouselBackground} col-sm-12 col-md-6`}
+											className={`${styles.carouselBackground} col-sm-12 col-md-6`}
 										>
-											<Carousel
-												sliderTitle={
-													project.projectTitle
-												}
-											/>
+											<Carousel />
 										</div>
 										<div
-											className={`${styles.experienceText} col-sm-12 col-md-6 bg-primary`}
+											className={`${styles.textContainer} col-sm-12 col-md-6 text-primary`}
 										>
-											{project.projectDesc}
+											<h4>{project.projectTitle}</h4>
+											<p>{project.projectDesc}</p>
 										</div>
 									</>
 								) : (
 									<>
 										<div
-											className={`${styles.experienceText} col-sm-12 col-md-6 bg-secondary`}
+											className={`${styles.textContainer} col-sm-12 col-md-6 text-secondary`}
 										>
+											<h4>{project.projectTitle}</h4>
 											{project.projectDesc}
 										</div>
 										<div
 											className={`${styles.experienceCarouselBackground} col-sm-12 col-md-6`}
 										>
-											<Carousel
-												sliderTitle={
-													project.projectTitle
-												}
-											/>
+											<Carousel />
 										</div>
 									</>
 								)}

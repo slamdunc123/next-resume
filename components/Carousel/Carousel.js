@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 // import './styles.css';
 
-const Carousel = ({ sliderTitle }) => {
+const Carousel = () => {
 	const settings = {
 		dots: true,
 		infinite: true,
@@ -15,7 +15,6 @@ const Carousel = ({ sliderTitle }) => {
 	};
 	return (
 		<div style={{ marginBottom: 50 }}>
-			<h5>{sliderTitle}</h5>
 			<Slider {...settings}>
 				<div className='slider-slide'>
 					<img
