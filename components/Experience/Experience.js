@@ -27,7 +27,7 @@ const Experience = () => {
 						<ul>
 							{item.duties.map((duty) => (
 								<li className='lead' key={duty.id}>
-									{duty.dutyDesc}
+									{duty.description}
 								</li>
 							))}
 						</ul>
@@ -38,36 +38,41 @@ const Experience = () => {
 				</div>
 				{item.projects
 					? item.projects.map((project, index) => (
-							<div className='row m-2' key={project.id}>
-								{index % 2 === 0 ? (
-									<>
-										<div
-											className={`${styles.carouselBackground} col-sm-12 col-md-6`}
-										>
-											<Carousel />
-										</div>
-										<div
-											className={`${styles.textContainer} col-sm-12 col-md-6 text-primary`}
-										>
-											<h4>{project.projectTitle}</h4>
-											<p>{project.projectDesc}</p>
-										</div>
-									</>
-								) : (
-									<>
-										<div
-											className={`${styles.textContainer} col-sm-12 col-md-6 text-secondary`}
-										>
-											<h4>{project.projectTitle}</h4>
-											{project.projectDesc}
-										</div>
-										<div
-											className={`${styles.experienceCarouselBackground} col-sm-12 col-md-6`}
-										>
-											<Carousel />
-										</div>
-									</>
-								)}
+							<div
+								className='card p-5 mb-3 shadow'
+								key={project.id}
+							>
+								<div className='row'>
+									{index % 2 === 0 ? (
+										<>
+											<div
+												className={`${styles.carouselBackground} col-sm-12 col-md-6`}
+											>
+												<Carousel project={project} />
+											</div>
+											<div
+												className={`${styles.textContainer} col-sm-12 col-md-6 text-primary`}
+											>
+												<h4>{project.title}</h4>
+												<p>{project.description}</p>
+											</div>
+										</>
+									) : (
+										<>
+											<div
+												className={`${styles.textContainer} col-sm-12 col-md-6 text-secondary`}
+											>
+												<h4>{project.title}</h4>
+												{project.description}
+											</div>
+											<div
+												className={`${styles.experienceCarouselBackground} col-sm-12 col-md-6`}
+											>
+												<Carousel project={project} />
+											</div>
+										</>
+									)}
+								</div>
 							</div>
 					  ))
 					: null}
