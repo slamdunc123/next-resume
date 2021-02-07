@@ -10,7 +10,7 @@ import Skills from '../components/Skills';
 import Interests from '../components/Interests';
 import Awards from '../components/Awards';
 
-export const AppContext = createContext();
+export const AppContext = createContext({});
 
 export default function Home() {
 	return (
