@@ -39,41 +39,40 @@ const Experience = () => {
 				{item.projects
 					? item.projects.map((project, index) => (
 							<div
-								className='card p-5 mb-3 shadow'
+								className='card pt-4 pl-2 pb-5 pr-2 mb-3 shadow'
 								key={project.id}
 							>
-								<div className='row'>
-									{index % 2 === 0 ? (
-										<>
-											<div
-												className={`${styles.carouselBackground} col-sm-12 col-md-6`}
-											>
-												<Carousel project={project} />
-											</div>
-											<div
-												className={`${styles.textContainer} col-sm-12 col-md-6 text-primary`}
-											>
-												<h4>{project.title}</h4>
-												<p>{project.description}</p>
-											</div>
-										</>
-									) : (
-										<>
-											<div
-												className={`${styles.textContainer} col-sm-12 col-md-6 text-secondary`}
-											>
-												<h4>{project.title}</h4>
-												{project.description}
-											</div>
-											<div
-												className={`${styles.experienceCarouselBackground} col-sm-12 col-md-6`}
-											>
-												<Carousel project={project} />
-											</div>
-										</>
-									)}
-								</div>
+								{index % 2 === 0 ? (
+									<div className={styles.projectRow}>
+										<div
+											className={`${styles.carouselBackground} col-sm-12 col-md-6`}
+										>
+											<Carousel project={project} />
+										</div>
+										<div
+											className={`${styles.textContainer} col-sm-12 col-md-6 text-primary mb-3`}
+										>
+											<h4>{project.title}</h4>
+											<p>{project.description}</p>
+										</div>
+									</div>
+								) : (
+									<div className='row'>
+										<div
+											className={`${styles.textContainer} col-sm-12 col-md-6 text-secondary mb-3`}
+										>
+											<h4>{project.title}</h4>
+											{project.description}
+										</div>
+										<div
+											className={`${styles.experienceCarouselBackground} col-sm-12 col-md-6`}
+										>
+											<Carousel project={project} />
+										</div>
+									</div>
+								)}
 							</div>
+							// </div>
 					  ))
 					: null}
 			</div>
